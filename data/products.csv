@@ -1,0 +1,4 @@
+id,name,price,currency,category,stock
+1,iPhone 15,1200,USD,Phones,10
+2,Samsung S24,1100,USD,Phones,20
+3,Macbook Pro,2500,USD,Laptops,5
