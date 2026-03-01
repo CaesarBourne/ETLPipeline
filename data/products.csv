@@ -1,4 +1,16 @@
-id,name,price,currency,category,stock
-1,iPhone 15,1200,USD,Phones,10
-2,Samsung S24,1100,USD,Phones,20
-3,Macbook Pro,2500,USD,Laptops,5
+SKU,Name,Color,Size,Price
+TSHIRT-001,Classic Cotton T-Shirt,black,s,"19,99"
+TSHIRT-002,Classic Cotton T-Shirt,Black,m,"19,99"
+TSHIRT-003,Classic Cotton T-Shirt,black,l,"19,99"
+TSHIRT-004,Classic Cotton T-Shirt,black,xl,"19,99"
+HOODIE-101,Premium Hoodie,navy,m,"59,99"
+HOODIE-102,Premium Hoodie,Navy,l,"59,99"
+HOODIE-103,Premium Hoodie,navy,xl,"59,99"
+JACKET-501,Winter Jacket,grey,m,"129,95"
+JACKET-502,Winter Jacket,Grey,l,"129,95"
+SNEAKER-900,Urban Sneaker,white,42,"89,50"
+SNEAKER-901,Urban Sneaker,White,43,"89,50"
+CAP-777,Logo Cap,red,s,"14,90"
+CAP-778,Logo Cap,Red,m,"14,90"
+POLO-333,Modern Polo Shirt,green,l,"39,00"
+POLO-334,Modern Polo Shirt,Green,xl,"39,00"
