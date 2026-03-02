@@ -1,0 +1,35 @@
+CREATE TABLE variants (
+  id SERIAL PRIMARY KEY,
+  product_id INTEGER REFERENCES products(id),
+  sku TEXT NOT NULL,
+  size TEXT,
+  color TEXT,
+  price NUMERIC,
+  currency TEXT DEFAULT 'EUR',
+  UNIQUE(product_id, sku)
+);
+
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  brand_id INTEGER REFERENCES brands(id),
+  name TEXT NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE brands (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE staging_variants (
+  job_id TEXT,
+  brand_id INTEGER,
+  sku TEXT,
+  name TEXT,
+  color TEXT,
+  size TEXT,
+  price NUMERIC,
+  status TEXT DEFAULT 'pending'
+);
