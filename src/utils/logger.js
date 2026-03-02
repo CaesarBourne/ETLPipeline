@@ -1,9 +1,13 @@
-const winston = require("winston");
+function log(level, message, meta = {}) {
+  console.log(JSON.stringify({
+    level,
+    message,
+    meta,
+    time: new Date().toISOString()
+  }))
+}
 
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.Console(),
-  ],
-});
-
-module.exports = logger;
+module.exports = {
+  info: (msg, meta) => log("INFO", msg, meta),
+  error: (msg, meta) => log("ERROR", msg, meta),
+}
