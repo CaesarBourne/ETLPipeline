@@ -62,3 +62,10 @@ readCSV('../products.csv',
     console.log("Duplicates:", duplicates)
   }
 )
+
+await sqs.send({
+  QueueUrl: process.env.QUEUE_URL,
+  MessageBody: JSON.stringify({
+    file: key
+  })
+})
