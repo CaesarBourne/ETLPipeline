@@ -1,14 +1,18 @@
 import fs from "fs";
+import path from "path"
 import csv from "csv-parser";
-import queue from "./queue";
-// import { queue } from "./queue"
+import queue from "./queue.js";
+import { fileURLToPath } from "url"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const BATCH_SIZE = 1000;
 let batch = [];
 
 const startTime = Date.now();
 
-const stream = fs.createReadStream().pipe(csv());
+const stream = fs.createReadStream(path.join(__dirname, "../../data/orders.csv")).pipe(csv());
 
 stream.on("data", (row) => {
   batch.push(row);
