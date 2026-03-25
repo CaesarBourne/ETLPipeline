@@ -19,7 +19,7 @@ import fs from "fs"
 const redis = new IORedis()
 
 // ✅ Shared writable stream (append mode)
-const fileStream = fs.createWriteStream("totals.ndjson", {
+const fileStream = fs.createWriteStream("totals.json", {
   flags: "a"
 })
 
