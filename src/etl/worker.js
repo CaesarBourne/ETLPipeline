@@ -12,16 +12,23 @@
 //     concurrency : 5
 // })
 
-import { Worker } from "bullmq"
-import IORedis from "ioredis"
-import fs from "fs"
+const { Worker } = require("bullmq")
+const IORedis = require("ioredis")
+const fs = require("fs")
+const path = require("path")
 
 const redis = new IORedis()
 
 // ✅ Shared writable stream (append mode)
-const fileStream = fs.createWriteStream("totals.json", {
-  flags: "a"
-})
+// const fileStream = fs.createWriteStream("totals.json", {
+//   flags: "a"
+// })
+
+const fileStream = fs.createWriteStream(
+  path.join(__dirname, "../../data/totals.ndjson"),
+  { flags: "a" }
+)
+// const fileSt = fs.createWriteStream("man.json", { flags : "a"})
 
 const worker = new Worker(
   "etl-queue",

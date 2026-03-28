@@ -1,11 +1,15 @@
-import fs from "fs";
-import path from "path"
-import csv from "csv-parser";
-import queue from "./queue.js";
-import { fileURLToPath } from "url"
+// import fs from "fs";
+// import path from "path"
+// import csv from "csv-parser";
+// import queue from "./queue.js";
+// import { fileURLToPath } from "url"
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename)
+const fs = require("fs")
+const path = require("path")
+const csv = require("csv-parser")
+const queue = require("./queue")
 
 const BATCH_SIZE = 1000;
 let batch = [];
